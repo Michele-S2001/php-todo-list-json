@@ -21,7 +21,12 @@ $title = 'PHP ToDo List JSON';
 
         <div class="tasks-wrapper">
           <h1 class="title">TODO - List</h1>
-          <input class="input-field" type="text" placeholder="scrivi una task">
+          <input 
+            @keyup.enter="sendTask()"
+            v-model="newTask"
+            class="input-field" 
+            type="text" 
+            placeholder="scrivi una task">
   
           <ul class="tasks-list">
             <li class="task">
