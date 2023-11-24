@@ -3,13 +3,19 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      newTask: ''
+      newTask: '',
+      tasks: []
     }
   },
 
   methods: {
     fetchTasks() {
-      axios.get('./server.php');
+      axios
+        .get('./server.php')
+        .then((res) => {
+          console.log(res.data.results);
+          this.tasks = res.data.results;
+        }) 
     },
 
     sendTask() {

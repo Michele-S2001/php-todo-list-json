@@ -29,11 +29,17 @@ $title = 'PHP ToDo List JSON';
             placeholder="scrivi una task">
   
           <ul class="tasks-list">
-            <li class="task">
-              <span class="text">Lorem, ipsum dolor.</span>
+            <li
+             class="task"
+             v-for="(task, i) in tasks"
+             :key="i"
+            >
+              <span class="text">{{ task.text }}</span>
               <span class="delete">&#215;</span>
             </li>
           </ul>
+
+          <p v-if="tasks.length === 0">NON CI SONO TASK</p>
         </div>
 
       </div>
