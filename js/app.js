@@ -13,17 +13,27 @@ createApp({
       axios
         .get('./server.php')
         .then((res) => {
-          console.log(res.data.results);
           this.tasks = res.data.results;
-        }) 
+        })
     },
 
     sendTask() {
-      console.log(this.newTask);
 
-      axios.post('./addTask.php');
+      if(this.newTask !== '') {
 
-      this.newTask = '';
+        const data = {
+          text: this.newTask
+        }
+
+        axios
+          .post('./addTask.php', data, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+          }).then((res) => {
+            this.tasks = res.data.results;
+          })
+
+        this.newTask = '';
+      }
     }
   },
 

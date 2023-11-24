@@ -22,8 +22,9 @@ $title = 'PHP ToDo List JSON';
         <div class="tasks-wrapper">
           <h1 class="title">TODO - List</h1>
           <input 
+            autofocus
             @keyup.enter="sendTask()"
-            v-model="newTask"
+            v-model.trim="newTask"
             class="input-field" 
             type="text" 
             placeholder="scrivi una task">
@@ -35,7 +36,10 @@ $title = 'PHP ToDo List JSON';
              :key="i"
             >
               <span class="text">{{ task.text }}</span>
-              <span class="delete">&#215;</span>
+              <span 
+                class="delete"
+                @click="deleteTask(i)"
+                >&#215;</span>
             </li>
           </ul>
 
