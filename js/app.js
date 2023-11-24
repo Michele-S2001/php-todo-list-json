@@ -37,8 +37,6 @@ createApp({
     },
 
     deleteTask(idx) {
-      console.log(idx);
-
       const data = {
         index: idx
       }
@@ -49,6 +47,20 @@ createApp({
         }).then((res) => {
           this.tasks = res.data.results;
         })
+    },
+
+    check(ind) {
+      const data = {
+        index: ind
+      }
+
+      axios
+        .post('./toggleTask.php', data, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        }).then((res) => {
+          this.tasks = res.data.results;
+        })
+      item.done = !item.done;
     }
   },
 

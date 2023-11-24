@@ -30,3 +30,15 @@
 - converto il nuovo array in una stringa json 
 - sovrascrivo la nuova stringa json al file tasks.json
 - ritorno come risposta il nuovo array
+
+### toggle del task
+- ascoltare l'evento click su ogni singola task
+- come argomento recuperare l'indice
+- inviare l'indice come data in una chiamata axios con post
+- recupero l'indice nell'endpoint 
+- recupero il json e lo converto 
+- cambio la chiave "done" dello iesimo elemento tramite l'indice
+- creo una risposta con il nuovo array
+- converto il nuovo array in una stringa json 
+- sovrascrivo la nuova stringa json al file tasks.json
+- ritorno come risposta il nuovo array

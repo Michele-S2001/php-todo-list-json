@@ -31,11 +31,15 @@ $title = 'PHP ToDo List JSON';
   
           <ul class="tasks-list">
             <li
-             class="task"
-             v-for="(task, i) in tasks"
-             :key="i"
+              @click="check(i)"  
+              class="task"
+              :class="{ toggle: task.done }"
+              v-for="(task, i) in tasks"
+              :key="i"
             >
-              <span class="text">{{ task.text }}</span>
+              <span 
+                class="text"
+                >{{ task.text }}</span>
               <span 
                 class="delete"
                 @click.stop="deleteTask(i)"
