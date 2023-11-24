@@ -38,7 +38,7 @@ $title = 'PHP ToDo List JSON';
               <span class="text">{{ task.text }}</span>
               <span 
                 class="delete"
-                @click="deleteTask(i)"
+                @click.stop="deleteTask(i)"
                 >&#215;</span>
             </li>
           </ul>

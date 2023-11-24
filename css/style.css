@@ -73,6 +73,8 @@ input {
 
 .task .delete {
   font-size: 30px;
+  user-select: none;
+  cursor: pointer;
 }
 
 .task .text {
