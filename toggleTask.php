@@ -1,6 +1,7 @@
 <?php
 
 $index = $_POST['index'];
+$index = intval($index);
 
 $tasks_json = file_get_contents('./tasks.json');
 $tasks = json_decode($tasks_json, true);
