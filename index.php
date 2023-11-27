@@ -20,25 +20,27 @@ $title = 'PHP ToDo List JSON';
       <div class="flex">
 
         <div class="tasks-wrapper">
-          <h1 class="title">TODO - List</h1>
+          <h1 class="title">Todo App</h1>
           <input 
             autofocus
             @keyup.enter="sendTask()"
             v-model.trim="newTask"
             class="input-field" 
             type="text" 
-            placeholder="scrivi una task">
-  
+            placeholder="scrivi una task...">
+          <div class="delete">
+            <button class="deleteAll">Clear All</button>
+          </div>
           <ul class="tasks-list">
             <li
-              @click="check(i)"  
               class="task"
-              :class="{ toggle: task.done }"
               v-for="(task, i) in tasks"
               :key="i"
             >
               <span 
                 class="text"
+                :class="{ toggle: task.done }"
+                @click="check(i)"
                 >{{ task.text }}</span>
               <span 
                 class="delete"
