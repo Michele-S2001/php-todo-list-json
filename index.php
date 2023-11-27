@@ -40,7 +40,7 @@ $title = 'PHP ToDo List JSON';
               <span 
                 class="text"
                 :class="{ toggle: task.done }"
-                @click="check(i)"
+                @click="toggleDone(i)"
                 >{{ task.text }}</span>
               <span 
                 class="delete"

@@ -49,7 +49,7 @@ createApp({
         })
     },
 
-    check(ind) {
+    toggleDone(ind) {
       const data = {
         index: ind
       }
