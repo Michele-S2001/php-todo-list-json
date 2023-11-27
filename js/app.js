@@ -61,6 +61,14 @@ createApp({
           this.tasks = res.data.results;
         })
       item.done = !item.done;
+    },
+
+    deleteAll() {
+      axios
+        .post('./deleteAll.php')
+        .then((res) => {
+          this.tasks = res.data.results;
+        })
     }
   },
 

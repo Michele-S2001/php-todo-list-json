@@ -29,7 +29,7 @@ $title = 'PHP ToDo List JSON';
             type="text" 
             placeholder="scrivi una task...">
           <div class="delete">
-            <button class="deleteAll">Clear All</button>
+            <button @click="deleteAll()" class="deleteAll">Clear All</button>
           </div>
           <ul class="tasks-list">
             <li
