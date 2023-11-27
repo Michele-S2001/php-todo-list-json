@@ -18,7 +18,6 @@ createApp({
     },
 
     sendTask() {
-
       if(this.newTask !== '') {
 
         const data = {
@@ -49,9 +48,9 @@ createApp({
         })
     },
 
-    toggleDone(ind) {
+    toggleDone(id) {
       const data = {
-        index: ind
+        index: id
       }
 
       axios
@@ -60,7 +59,6 @@ createApp({
         }).then((res) => {
           this.tasks = res.data.results;
         })
-      item.done = !item.done;
     },
 
     deleteAll() {
